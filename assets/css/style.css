@@ -1952,6 +1952,7 @@ ul {
     width: auto;
     margin-bottom: 16px;
     object-fit: contain;
+    display: block;
 }
 
 .footer-section h4 {
