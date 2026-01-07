@@ -7,10 +7,18 @@
     <title>BPPA - Botswana Payroll Professionals Alliance</title>
     <link rel="icon" type="image/jpeg" href="assets/img/favicon.jpg">
     <link rel="shortcut icon" type="image/jpeg" href="assets/img/favicon.jpg">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="assets/css/style.min.css" as="style">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- Preload critical images for LCP -->
+    <link rel="preload" href="assets/img/Home/home-optimized.jpg" as="image">
+    <link rel="preload" href="assets/img/logo-optimized.jpg" as="image">
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Load Google Fonts asynchronously -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap"></noscript>
 </head>
 <body class="homepage">
     <!-- Navigation -->
@@ -18,7 +26,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="assets/img/logo.PNG" alt="BPPA Logo">
+                    <img src="assets/img/logo-optimized.jpg" alt="BPPA Logo" width="212" height="90" loading="eager">
                 </div>
                 <button class="mobile-toggle" id="mobileToggle">
                     <span></span>
@@ -48,7 +56,7 @@
         <div class="hero-slider">
             <!-- Slide 1 -->
             <div class="hero-slide active">
-                <div class="hero-background" style="background-image: url('assets/img/Home/home.png');"></div>
+                <div class="hero-background" style="background-image: url('assets/img/Home/home-optimized.jpg');"></div>
                 <div class="hero-wrapper">
                     <div class="container">
                         <div class="hero-content-center">
@@ -84,7 +92,7 @@
 
             <!-- Slide 3 -->
             <div class="hero-slide">
-                <div class="hero-background" style="background-image: url('assets/img/Home/slide3.jpg');"></div>
+                <div class="hero-background" style="background-image: url('assets/img/Home/slide3-optimized.jpg');"></div>
                 <div class="hero-wrapper">
                     <div class="container">
                         <div class="hero-content-center">
@@ -129,11 +137,15 @@
                     <!-- Card 1: Payroll Trainee Membership -->
                     <div class="membership-card">
                         <div class="card-image">
-                            <img src="assets/img/membership/trainee-membership.jpg" alt="Payroll Trainee Membership" onerror="this.src='assets/img/placeholder-card.jpg'">
+                            <img src="assets/img/membership/trainee-membership-optimized.jpg" 
+                                 alt="Payroll Trainee Membership" 
+                                 width="312" 
+                                 height="208" 
+                                 loading="lazy">
                             <div class="card-overlay">
                                 <div class="card-badge">MEMBERSHIP</div>
                                 <h3 class="card-title">Payroll Trainee Membership</h3>
-                                <a href="membership.html" class="learn-more-btn">Learn more</a>
+                                <a href="membership.html" class="learn-more-btn">Explore Trainee Membership Options</a>
                             </div>
                         </div>
                     </div>
@@ -141,11 +153,15 @@
                     <!-- Card 2: Payroll Professionals Membership -->
                     <div class="membership-card">
                         <div class="card-image">
-                            <img src="assets/img/membership/professional-membership.jpg" alt="Payroll Professionals Membership" onerror="this.src='assets/img/placeholder-card.jpg'">
+                            <img src="assets/img/membership/professional-membership-optimized.jpg" 
+                                 alt="Payroll Professionals Membership" 
+                                 width="460" 
+                                 height="200" 
+                                 loading="lazy">
                             <div class="card-overlay">
                                 <div class="card-badge">MEMBERSHIP</div>
                                 <h3 class="card-title">Payroll Professionals Membership</h3>
-                                <a href="membership.html" class="learn-more-btn">Learn more</a>
+                                <a href="membership.html" class="learn-more-btn">View Professional Membership Benefits</a>
                             </div>
                         </div>
                     </div>
@@ -153,11 +169,15 @@
                     <!-- Card 3: Additional Benefits -->
                     <div class="membership-card">
                         <div class="card-image">
-                            <img src="assets/img/membership/benefits.jpg" alt="Additional Benefits" onerror="this.src='assets/img/placeholder-card.jpg'">
+                            <img src="assets/img/membership/benefits-optimized.jpg" 
+                                 alt="Additional Benefits" 
+                                 width="312" 
+                                 height="294" 
+                                 loading="lazy">
                             <div class="card-overlay">
                                 <div class="card-badge">MEMBERSHIP</div>
                                 <h3 class="card-title">Exclusive Member Benefits</h3>
-                                <a href="membership.html" class="learn-more-btn">Learn more</a>
+                                <a href="membership.html" class="learn-more-btn">Discover All Member Benefits</a>
                             </div>
                         </div>
                     </div>
@@ -290,7 +310,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.min.js" defer></script>
     <script>
         window.onscroll = function() {
             var btn = document.getElementById('scrollToTop');

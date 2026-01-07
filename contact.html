@@ -7,10 +7,15 @@
     <title>Contact Us - BPPA</title>
     <link rel="icon" type="image/jpeg" href="assets/img/favicon.jpg">
     <link rel="shortcut icon" type="image/jpeg" href="assets/img/favicon.jpg">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="assets/css/style.min.css" as="style">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Load Google Fonts asynchronously -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"></noscript>
 </head>
 <body>
     <!-- Navigation -->
@@ -18,7 +23,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="assets/img/logo.PNG" alt="BPPA Logo">
+                    <img src="assets/img/logo-optimized.jpg" alt="BPPA Logo" width="212" height="90" loading="eager">
                 </div>
                 <button class="mobile-toggle" id="mobileToggle">
                     <span></span>
@@ -271,7 +276,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.min.js" defer></script>
     <script>
         // Tab functionality
         const tabs = document.querySelectorAll('.about-tab');
