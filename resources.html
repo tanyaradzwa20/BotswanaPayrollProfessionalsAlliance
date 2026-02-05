@@ -58,10 +58,6 @@
         <div class="container">
             <div class="about-tabs">
                 <button class="about-tab active" data-tab="all-resources">All Resources</button>
-                <button class="about-tab" data-tab="guides">Guides & Manuals</button>
-                <button class="about-tab" data-tab="templates">Templates</button>
-                <button class="about-tab" data-tab="regulations">Regulations</button>
-                <button class="about-tab" data-tab="publications">Publications</button>
             </div>
         </div>
     </section>
@@ -567,17 +563,15 @@
                     <p>Botswana Payroll Professionals Alliance</p>
                     <p class="footer-tagline">Fostering Excellence in Payroll Management</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="vision-mission.html">Vision & Mission</a></li>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+                                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="vision-mission.html">Vision & Mission</a></li>
+                            <li><a href="membership.html">Membership</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                 <div class="footer-section">
                     <h4>Our Values</h4>
                     <ul>
@@ -631,6 +625,8 @@
                 // Add active class to clicked tab and corresponding panel
                 this.classList.add('active');
                 document.getElementById(targetTab).classList.add('active');
+                // Scroll to top of tab content
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
 
@@ -644,3 +640,6 @@
     </script>
 </body>
 </html>
+
+
+

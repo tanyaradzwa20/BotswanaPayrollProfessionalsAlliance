@@ -27,14 +27,8 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="vision-mission.html" class="nav-link">Vision & Mission</a></li>
                     <li><a href="membership.html" class="nav-link">Membership</a></li>
-                    <li class="nav-dropdown">
-                        <a href="events.html" class="nav-link">Events <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="dropdown-arrow"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -273,15 +267,15 @@
                     <p>Botswana Payroll Professionals Alliance</p>
                     <p class="footer-tagline">Fostering Excellence in Payroll Management</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="vision-mission.html">Vision & Mission</a></li>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+                                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="vision-mission.html">Vision & Mission</a></li>
+                            <li><a href="membership.html">Membership</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                 <div class="footer-section">
                     <h4>Our Values</h4>
                     <ul>
@@ -335,6 +329,8 @@
                 // Add active class to clicked tab and corresponding panel
                 this.classList.add('active');
                 document.getElementById(targetTab).classList.add('active');
+                // Scroll to top of tab content
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
 
@@ -350,3 +346,4 @@
     </script>
 </body>
 </html>
+

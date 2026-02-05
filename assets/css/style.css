@@ -1927,20 +1927,23 @@ ul {
     z-index: 0;
 }
 
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    }
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* This makes all 4 columns equal width */
-    gap: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
     align-items: start;
 }
 
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+.footer-section:first-child {
+    align-items: flex-start;
 }
 
 .footer-section h3 {
@@ -1972,11 +1975,11 @@ ul {
     color: var(--primary-color);
     line-height: 1.7;
     margin-bottom: 12px;
-}
+    }
 
 .footer-tagline {
-    font-size: 0.95rem;
-    font-style: italic;
+    text-align: left;
+    margin: 0;
 }
 
 .footer-section ul li {
@@ -2054,11 +2057,6 @@ ul {
 
     .objectives-grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
     }
 
     .contact-content {
@@ -2156,18 +2154,91 @@ ul {
         padding: 30px;
     }
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 50px;
-    }
-
     .social-links {
         justify-content: center;
+    }
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 30px;
+    }
+    .footer-section:first-child {
+        align-items: center !important;
+    }
+
+    .footer-section:first-child p {
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .footer-section:first-child .footer-tagline {
+        text-align: center !important;
+        margin: 0;
+        width: 100%;
+    }
+    .footer-section {
+        align-items: center !important;
+        width: 100%;
+    }
+
+    .footer-section h4 {
+        text-align: center;
+    }
+
+    .footer-section ul li {
+        text-align: center;
+    }
+
+    .footer-section p {
+        text-align: center;
+    }
+
+    .footer-section ul {
+        text-align: center;
     }
 
     .membership-card.featured {
         transform: scale(1);
+    }
+    .membership-card:not(.carousel-track .membership-card) {
+        padding: 25px;
+        min-width: 0;
+    }
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    align-items: start;
+}
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .membership-title {
+        font-size: 1.3rem;
+    }
+
+    .membership-description {
+        font-size: 0.9rem;
+    }
+
+    .benefits-list li {
+        font-size: 0.9rem;
+    }
+    table th {
+        font-size: 0.85rem !important;
+        padding: 0.75rem 0.5rem !important;
+        white-space: nowrap;
+    }
+
+    table td {
+        font-size: 0.85rem !important;
+        padding: 0.75rem 0.5rem !important;
     }
 }
 
@@ -3674,37 +3745,40 @@ ul {
 
 .faq-item {
     background: white;
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
+    border: 1px solid rgba(26, 53, 86, 0.1);
+    border-radius: 8px;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin-bottom: 8px;
 }
 
 .faq-item:hover {
     border-color: var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.1);
+    box-shadow: 0 2px 8px rgba(201, 169, 97, 0.15);
+    transform: translateY(-1px);
 }
 
 .faq-item.active {
     border-color: var(--accent-gold);
-    background: linear-gradient(to right, #f0fdfa 0%, #ffffff 100%);
+    background: linear-gradient(to right, rgba(26, 53, 86, 0.02) 0%, #ffffff 100%);
+    box-shadow: 0 2px 12px rgba(201, 169, 97, 0.2);
 }
 
 .faq-question {
     width: 100%;
-    padding: 20px 25px;
+    padding: 14px 20px;
     background: none;
     border: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
     cursor: pointer;
     text-align: left;
     font-family: var(--font-headings);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--primary-color);
     transition: all 0.3s ease;
 }
 
@@ -3713,8 +3787,8 @@ ul {
 }
 
 .faq-question svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     color: var(--accent-gold);
     transition: transform 0.3s ease;
     flex-shrink: 0;
@@ -3732,7 +3806,7 @@ ul {
 
 .faq-item.active .faq-answer {
     max-height: 1000px;
-    padding: 0 25px 25px;
+    padding: 0 20px 16px;
 }
 
 .faq-answer p {
@@ -3791,4 +3865,24 @@ ul {
         padding-left: 20px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

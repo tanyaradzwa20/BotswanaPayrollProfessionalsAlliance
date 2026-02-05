@@ -319,6 +319,31 @@ window.addEventListener('load', function() {
 });
 
 // ========================================
+// FAQ ACCORDION FUNCTIONALITY
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+});
+
+// ========================================
 // CONSOLE WELCOME MESSAGE
 // ========================================
 
