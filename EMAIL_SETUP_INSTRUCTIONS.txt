@@ -1,0 +1,126 @@
+BPPA Contact Form - PHPMailer Email Setup Instructions
+=======================================================
+
+Your contact form is now configured with PHPMailer for reliable email delivery!
+
+FILES INCLUDED:
+---------------
+1. send-email.php - Handles form submission using PHPMailer
+2. PHPMailer/ - Complete PHPMailer library
+3. .env - Email configuration file (IMPORTANT: Configure this!)
+4. Updated contact.html - Form submits to PHP script
+5. Updated main.js - Handles AJAX form submission
+
+SETUP STEPS (REQUIRED):
+-----------------------
+
+Step 1: Configure .env File
+----------------------------
+Open the .env file and update these settings:
+
+SMTP_HOST="smtp.gmail.com"
+SMTP_USER="your-email@gmail.com"          <-- Your Gmail address
+SMTP_PASS="your-16-digit-app-password"    <-- Gmail App Password (see below)
+SMTP_PORT=587
+
+Step 2: Generate Gmail App Password
+------------------------------------
+1. Go to your Google Account: https://myaccount.google.com/
+2. Click "Security" in the left menu
+3. Enable "2-Step Verification" if not already enabled
+4. Search for "App passwords" in the search bar
+5. Click "App passwords"
+6. Select "Mail" and "Other (Custom name)"
+7. Enter "BPPA Website" as the name
+8. Click "Generate"
+9. Copy the 16-character password (remove spaces)
+10. Paste it into SMTP_PASS in your .env file
+
+Step 3: Update Recipient Email (Optional)
+------------------------------------------
+The form currently sends emails to: info@bppabw.com
+
+To change this:
+1. Open send-email.php
+2. Find line: $mail->addAddress('info@bppabw.com', 'BPPA');
+3. Change to your preferred email address
+4. Save the file
+
+Step 4: Upload to Web Server
+-----------------------------
+Upload these files/folders to your web hosting:
+- send-email.php
+- PHPMailer/ (entire folder)
+- .env
+- contact.html
+- assets/ (entire folder with updated main.js)
+
+TESTING:
+--------
+1. Visit your contact page on the live website
+2. Fill out the form completely
+3. Submit and wait for success message
+4. Check the inbox of the recipient email
+5. Check spam folder if not received
+
+TROUBLESHOOTING:
+----------------
+
+Error: "SMTP connect() failed"
+- Check SMTP_HOST is "smtp.gmail.com"
+- Check SMTP_PORT is 587
+- Verify your internet connection
+- Try port 465 with SSL instead
+
+Error: "Invalid credentials"
+- Double-check SMTP_USER is your full Gmail address
+- Verify SMTP_PASS is the 16-digit App Password (not your regular password)
+- Remove any spaces from the App Password
+- Regenerate App Password if needed
+
+Error: "Could not authenticate"
+- Make sure 2-Step Verification is enabled on your Google Account
+- Use App Password, not regular Gmail password
+- Check if "Less secure app access" is needed (older accounts)
+
+Emails go to spam:
+- Add the sender email to your contacts
+- Mark emails as "Not Spam" a few times
+- Consider using a custom domain email instead of Gmail
+
+SECURITY NOTES:
+---------------
+✅ PHPMailer library provides secure SMTP authentication
+✅ .env file keeps credentials separate from code
+✅ Form validates all inputs before processing
+✅ HTML tags stripped from user input
+✅ Email addresses validated
+✅ AJAX submission for better user experience
+
+IMPORTANT:
+----------
+⚠️ Never commit .env file to version control (GitHub, etc.)
+⚠️ Keep your App Password private
+⚠️ Test thoroughly before going live
+
+ALTERNATIVE EMAIL PROVIDERS:
+-----------------------------
+You can also use other email providers:
+
+Outlook/Hotmail:
+SMTP_HOST="smtp-mail.outlook.com"
+SMTP_PORT=587
+
+Yahoo:
+SMTP_HOST="smtp.mail.yahoo.com"
+SMTP_PORT=587
+
+Custom Domain (cPanel):
+SMTP_HOST="mail.yourdomain.com"
+SMTP_PORT=587 or 465
+(Get credentials from your hosting provider)
+
+CONTACT INFO:
+-------------
+Form sends to: info@bppabw.com
+Need help? Let me know!
